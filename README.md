@@ -1,6 +1,6 @@
 # flutter_sample_fonts
 
-A new Flutter project.
+Sample to try a custom font.
 
 ## Getting Started
 
