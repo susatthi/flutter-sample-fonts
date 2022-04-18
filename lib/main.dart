@@ -5,20 +5,36 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  /// 選択中のフォントファミリー
+  String _selectedFontFamily = 'Roboto';
+
+  void changeFontFamily(String fontFamily) {
+    setState(() {
+      _selectedFontFamily = fontFamily;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
-    const fontFamily = FontFamily.notoSansJapanese;
     final themeData = ThemeData(
       primarySwatch: Colors.blue,
-      fontFamily: fontFamily,
+      fontFamily: _selectedFontFamily,
     );
     return MaterialApp(
       title: 'Flutter Sample Fonts',
       theme: themeData,
-      home: const SamplePage(title: fontFamily),
+      home: SamplePage(
+        fontFamily: _selectedFontFamily,
+        onChangeFontFamily: changeFontFamily,
+      ),
     );
   }
 }
@@ -26,16 +42,37 @@ class MyApp extends StatelessWidget {
 class SamplePage extends StatelessWidget {
   const SamplePage({
     Key? key,
-    required this.title,
+    required this.fontFamily,
+    required this.onChangeFontFamily,
   }) : super(key: key);
 
-  final String title;
+  final String fontFamily;
+  final void Function(String) onChangeFontFamily;
 
   @override
   Widget build(BuildContext context) {
+    print(Theme.of(context).textTheme.bodyText1?.fontFamily);
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        title: Text(fontFamily),
+        actions: [
+          _ActionIcon(
+            icon: Icons.font_download,
+            onTap: () async {
+              final selected = await showDialog<String>(
+                context: context,
+                builder: (context) {
+                  return _FontFamilyPickerDialog(
+                    fontFamily: fontFamily,
+                  );
+                },
+              );
+              if (selected != null) {
+                onChangeFontFamily(selected);
+              }
+            },
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -103,6 +140,88 @@ class _PreviewTextRow extends StatelessWidget {
           const SizedBox(height: 5),
           const Divider(),
         ],
+      ),
+    );
+  }
+}
+
+class _ActionIcon extends StatelessWidget {
+  const _ActionIcon({
+    Key? key,
+    required this.icon,
+    this.size = 50.0,
+    this.iconSize = 25.0,
+    this.onTap,
+  }) : super(key: key);
+
+  final IconData icon;
+  final double size;
+  final double iconSize;
+  final VoidCallback? onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onTap,
+      child: SizedBox(
+        width: size,
+        height: size,
+        child: Stack(
+          alignment: AlignmentDirectional.center,
+          children: [
+            Icon(
+              icon,
+              size: iconSize,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _FontFamilyPickerDialog extends StatelessWidget {
+  const _FontFamilyPickerDialog({
+    Key? key,
+    required this.fontFamily,
+  }) : super(key: key);
+
+  final String fontFamily;
+
+  /// フォントファミリー一覧
+  static const fontFamilies = [
+    'Roboto',
+    FontFamily.notoSansJapanese,
+    FontFamily.mPLUSRounded1c,
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      content: SizedBox(
+        width: 500,
+        height: fontFamilies.length * 55,
+        child: ListView.builder(
+          shrinkWrap: true,
+          itemCount: fontFamilies.length,
+          itemBuilder: (context, index) {
+            return ListTile(
+              leading: Visibility(
+                visible: fontFamilies[index] == fontFamily,
+                child: const Icon(Icons.check),
+              ),
+              title: Text(
+                fontFamilies[index],
+                style: TextStyle(
+                  fontFamily: fontFamilies[index],
+                ),
+              ),
+              onTap: () {
+                Navigator.of(context).pop(fontFamilies[index]);
+              },
+            );
+          },
+        ),
       ),
     );
   }
