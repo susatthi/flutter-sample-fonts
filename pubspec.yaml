@@ -7,14 +7,47 @@ environment:
   sdk: ">=2.16.2 <3.0.0"
 
 dependencies:
+  cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.2
 
 dev_dependencies:
+  build_runner: ^2.1.8
+  flutter_gen_runner: ^4.1.6
+  flutter_lints: ^1.0.0
   flutter_test:
     sdk: flutter
-  flutter_lints: ^1.0.0
 
 flutter:
+  fonts:
+    - family: Noto Sans Japanese
+      fonts:
+        - asset: assets/fonts/NotoSansJP/NotoSansJP-Thin.otf
+          weight: 100
+        - asset: assets/fonts/NotoSansJP/NotoSansJP-Light.otf
+          weight: 300
+        - asset: assets/fonts/NotoSansJP/NotoSansJP-Regular.otf
+          weight: 400
+        - asset: assets/fonts/NotoSansJP/NotoSansJP-Medium.otf
+          weight: 500
+        - asset: assets/fonts/NotoSansJP/NotoSansJP-Bold.otf
+          weight: 700
+        - asset: assets/fonts/NotoSansJP/NotoSansJP-Black.otf
+          weight: 900
+    - family: M PLUS Rounded 1c
+      fonts:
+        - asset: assets/fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-Thin.ttf
+          weight: 100
+        - asset: assets/fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-Light.ttf
+          weight: 300
+        - asset: assets/fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-Black.ttf
+          weight: 900
   uses-material-design: true

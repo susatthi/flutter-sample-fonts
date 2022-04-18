@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sample_fonts/gen/fonts.gen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,13 +10,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final fontFamily = Theme.of(context).textTheme.bodyText1?.fontFamily;
+    const fontFamily = FontFamily.notoSansJapanese;
+    final themeData = ThemeData(
+      primarySwatch: Colors.blue,
+      fontFamily: fontFamily,
+    );
     return MaterialApp(
       title: 'Flutter Sample Fonts',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: SamplePage(title: fontFamily ?? 'None'),
+      theme: themeData,
+      home: const SamplePage(title: fontFamily),
     );
   }
 }
