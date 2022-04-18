@@ -2,21 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_sample_fonts/gen/fonts.gen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const App());
 }
 
-class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+class App extends StatefulWidget {
+  const App({Key? key}) : super(key: key);
 
   @override
-  State<MyApp> createState() => _MyAppState();
+  State<App> createState() => _AppState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _AppState extends State<App> {
   /// 選択中のフォントファミリー
   String _selectedFontFamily = 'Roboto';
 
-  void changeFontFamily(String fontFamily) {
+  void _changeFontFamily(String fontFamily) {
     setState(() {
       _selectedFontFamily = fontFamily;
     });
@@ -24,16 +24,15 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    final themeData = ThemeData(
-      primarySwatch: Colors.blue,
-      fontFamily: _selectedFontFamily,
-    );
     return MaterialApp(
       title: 'Flutter Sample Fonts',
-      theme: themeData,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        fontFamily: _selectedFontFamily,
+      ),
       home: SamplePage(
         fontFamily: _selectedFontFamily,
-        onChangeFontFamily: changeFontFamily,
+        onChangeFontFamily: _changeFontFamily,
       ),
     );
   }
@@ -46,12 +45,14 @@ class SamplePage extends StatelessWidget {
     required this.onChangeFontFamily,
   }) : super(key: key);
 
+  /// 選択中のフォントファミリー
   final String fontFamily;
+
+  /// 選択中のフォントファミリーを変更した
   final void Function(String) onChangeFontFamily;
 
   @override
   Widget build(BuildContext context) {
-    print(Theme.of(context).textTheme.bodyText1?.fontFamily);
     return Scaffold(
       appBar: AppBar(
         title: Text(fontFamily),
@@ -61,11 +62,9 @@ class SamplePage extends StatelessWidget {
             onTap: () async {
               final selected = await showDialog<String>(
                 context: context,
-                builder: (context) {
-                  return _FontFamilyPickerDialog(
-                    fontFamily: fontFamily,
-                  );
-                },
+                builder: (context) => _FontFamilySelectorDialog(
+                  fontFamily: fontFamily,
+                ),
               );
               if (selected != null) {
                 onChangeFontFamily(selected);
@@ -91,7 +90,6 @@ class SamplePage extends StatelessWidget {
             ),
             _PreviewTextRow(
               title: 'Italic',
-              fontWeight: FontWeight.normal,
               fontStyle: FontStyle.italic,
             ),
           ],
@@ -109,10 +107,16 @@ class _PreviewTextRow extends StatelessWidget {
     this.fontStyle = FontStyle.normal,
   }) : super(key: key);
 
+  /// タイトル
   final String title;
+
+  /// ウェイト
   final FontWeight fontWeight;
+
+  /// スタイル
   final FontStyle fontStyle;
 
+  /// プレビュー文字列
   static const previewText =
       '彼らの機器や装置はすべて生命体だ。ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz木林山川土空田天生花草虫犬人名女男子目耳口手足見音力気円入来行帰歩走止活店買売午汽弓回会組船明社切電毎合当台楽公引科歌刀番用何1234567890‘?’“!”(%)[#]{@}/&<-+÷×=>®©€£¥¢:;,.*';
 
@@ -180,8 +184,8 @@ class _ActionIcon extends StatelessWidget {
   }
 }
 
-class _FontFamilyPickerDialog extends StatelessWidget {
-  const _FontFamilyPickerDialog({
+class _FontFamilySelectorDialog extends StatelessWidget {
+  const _FontFamilySelectorDialog({
     Key? key,
     required this.fontFamily,
   }) : super(key: key);
@@ -197,32 +201,26 @@ class _FontFamilyPickerDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AlertDialog(
-      content: SizedBox(
-        width: 500,
-        height: fontFamilies.length * 55,
-        child: ListView.builder(
-          shrinkWrap: true,
-          itemCount: fontFamilies.length,
-          itemBuilder: (context, index) {
-            return ListTile(
+    return SimpleDialog(
+      children: fontFamilies
+          .map(
+            (ff) => ListTile(
               leading: Visibility(
-                visible: fontFamilies[index] == fontFamily,
+                visible: ff == fontFamily,
                 child: const Icon(Icons.check),
               ),
               title: Text(
-                fontFamilies[index],
+                ff,
                 style: TextStyle(
-                  fontFamily: fontFamilies[index],
+                  fontFamily: ff,
                 ),
               ),
               onTap: () {
-                Navigator.of(context).pop(fontFamilies[index]);
+                Navigator.of(context).pop(ff);
               },
-            );
-          },
-        ),
-      ),
+            ),
+          )
+          .toList(),
     );
   }
 }
