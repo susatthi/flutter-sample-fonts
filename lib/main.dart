@@ -77,19 +77,43 @@ class SamplePage extends StatelessWidget {
         child: Column(
           children: const [
             _PreviewTextRow(
-              title: 'Thin (Font Weight w100)',
+              title: 'Normal w100',
               fontWeight: FontWeight.w100,
             ),
             _PreviewTextRow(
-              title: 'Normal (Font Weight w400)',
-              fontWeight: FontWeight.normal,
+              title: 'Normal w200',
+              fontWeight: FontWeight.w200,
             ),
             _PreviewTextRow(
-              title: 'Bold (Font Weight w700)',
-              fontWeight: FontWeight.bold,
+              title: 'Normal w300',
+              fontWeight: FontWeight.w300,
             ),
             _PreviewTextRow(
-              title: 'Italic',
+              title: 'Normal w400',
+              fontWeight: FontWeight.w400,
+            ),
+            _PreviewTextRow(
+              title: 'Normal w500',
+              fontWeight: FontWeight.w500,
+            ),
+            _PreviewTextRow(
+              title: 'Normal w600',
+              fontWeight: FontWeight.w600,
+            ),
+            _PreviewTextRow(
+              title: 'Normal w700',
+              fontWeight: FontWeight.w700,
+            ),
+            _PreviewTextRow(
+              title: 'Normal w800',
+              fontWeight: FontWeight.w800,
+            ),
+            _PreviewTextRow(
+              title: 'Normal w900',
+              fontWeight: FontWeight.w900,
+            ),
+            _PreviewTextRow(
+              title: 'Italic w400',
               fontStyle: FontStyle.italic,
             ),
           ],
@@ -117,15 +141,13 @@ class _PreviewTextRow extends StatelessWidget {
   final FontStyle fontStyle;
 
   /// プレビュー文字列
-  static const previewText =
-      '彼らの機器や装置はすべて生命体だ。ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz木林山川土空田天生花草虫犬人名女男子目耳口手足見音力気円入来行帰歩走止活店買売午汽弓回会組船明社切電毎合当台楽公引科歌刀番用何1234567890‘?’“!”(%)[#]{@}/&<-+÷×=>®©€£¥¢:;,.*';
+  static const previewText = '海空汽組刃ABCabc123あいう';
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(5),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: Row(
         children: [
           Text(
             title,
@@ -133,16 +155,15 @@ class _PreviewTextRow extends StatelessWidget {
               color: Theme.of(context).colorScheme.background,
             ),
           ),
-          const SizedBox(height: 10),
+          const Spacer(),
           Text(
             previewText,
             style: TextStyle(
+              fontSize: 20,
               fontWeight: fontWeight,
               fontStyle: fontStyle,
             ),
           ),
-          const SizedBox(height: 5),
-          const Divider(),
         ],
       ),
     );
