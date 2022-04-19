@@ -50,4 +50,173 @@ flutter:
           weight: 800
         - asset: assets/fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-Black.ttf
           weight: 900
+    - family: Noto Serif Japanese
+      fonts:
+        - asset: assets/fonts/Noto_Serif_JP/NotoSerifJP-ExtraLight.otf
+          weight: 200
+        - asset: assets/fonts/Noto_Serif_JP/NotoSerifJP-Light.otf
+          weight: 300
+        - asset: assets/fonts/Noto_Serif_JP/NotoSerifJP-Regular.otf
+          weight: 400
+        - asset: assets/fonts/Noto_Serif_JP/NotoSerifJP-Medium.otf
+          weight: 500
+        - asset: assets/fonts/Noto_Serif_JP/NotoSerifJP-SemiBold.otf
+          weight: 600
+        - asset: assets/fonts/Noto_Serif_JP/NotoSerifJP-Bold.otf
+          weight: 700
+        - asset: assets/fonts/Noto_Serif_JP/NotoSerifJP-Black.otf
+          weight: 900
+    - family: M PLUS 1p
+      fonts:
+        - asset: assets/fonts/M_PLUS_1p/MPLUS1p-Thin.ttf
+          weight: 100
+        - asset: assets/fonts/M_PLUS_1p/MPLUS1p-Light.ttf
+          weight: 300
+        - asset: assets/fonts/M_PLUS_1p/MPLUS1p-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/M_PLUS_1p/MPLUS1p-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/M_PLUS_1p/MPLUS1p-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/M_PLUS_1p/MPLUS1p-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/M_PLUS_1p/MPLUS1p-Black.ttf
+          weight: 900
+    - family: Shippori Mincho
+      fonts:
+        - asset: assets/fonts/Shippori_Mincho/ShipporiMincho-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Shippori_Mincho/ShipporiMincho-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Shippori_Mincho/ShipporiMincho-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Shippori_Mincho/ShipporiMincho-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Shippori_Mincho/ShipporiMincho-ExtraBold.ttf
+          weight: 800
+    - family: Zen Maru Gothic
+      fonts:
+        - asset: assets/fonts/Zen_Maru_Gothic/ZenMaruGothic-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Zen_Maru_Gothic/ZenMaruGothic-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Zen_Maru_Gothic/ZenMaruGothic-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Zen_Maru_Gothic/ZenMaruGothic-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Zen_Maru_Gothic/ZenMaruGothic-Black.ttf
+          weight: 900
+    - family: Zen Kaku Gothic New
+      fonts:
+        - asset: assets/fonts/Zen_Kaku_Gothic_New/ZenKakuGothicNew-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Zen_Kaku_Gothic_New/ZenKakuGothicNew-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Zen_Kaku_Gothic_New/ZenKakuGothicNew-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Zen_Kaku_Gothic_New/ZenKakuGothicNew-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Zen_Kaku_Gothic_New/ZenKakuGothicNew-Black.ttf
+          weight: 900
+    - family: Murecho
+      fonts:
+        - asset: assets/fonts/Murecho/static/Murecho-Thin.ttf
+          weight: 100
+        - asset: assets/fonts/Murecho/static/Murecho-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/Murecho/static/Murecho-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Murecho/static/Murecho-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Murecho/static/Murecho-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Murecho/static/Murecho-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Murecho/static/Murecho-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Murecho/static/Murecho-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/Murecho/static/Murecho-Black.ttf
+          weight: 900
+    - family: Shippori Mincho B1
+      fonts:
+        - asset: assets/fonts/Shippori_Mincho_B1/ShipporiMinchoB1-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Shippori_Mincho_B1/ShipporiMinchoB1-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Shippori_Mincho_B1/ShipporiMinchoB1-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Shippori_Mincho_B1/ShipporiMinchoB1-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Shippori_Mincho_B1/ShipporiMinchoB1-ExtraBold.ttf
+          weight: 800
+    - family: M PLUS 1 Code
+      fonts:
+        - asset: assets/fonts/M_PLUS_1_Code/static/MPLUS1Code-Thin.ttf
+          weight: 100
+        - asset: assets/fonts/M_PLUS_1_Code/static/MPLUS1Code-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/M_PLUS_1_Code/static/MPLUS1Code-Light.ttf
+          weight: 300
+        - asset: assets/fonts/M_PLUS_1_Code/static/MPLUS1Code-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/M_PLUS_1_Code/static/MPLUS1Code-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/M_PLUS_1_Code/static/MPLUS1Code-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/M_PLUS_1_Code/static/MPLUS1Code-Bold.ttf
+          weight: 700
+    - family: M PLUS 1
+      fonts:
+        - asset: assets/fonts/M_PLUS_1/static/MPLUS1-Thin.ttf
+          weight: 100
+        - asset: assets/fonts/M_PLUS_1/static/MPLUS1-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/M_PLUS_1/static/MPLUS1-Light.ttf
+          weight: 300
+        - asset: assets/fonts/M_PLUS_1/static/MPLUS1-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/M_PLUS_1/static/MPLUS1-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/M_PLUS_1/static/MPLUS1-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/M_PLUS_1/static/MPLUS1-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/M_PLUS_1/static/MPLUS1-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/M_PLUS_1/static/MPLUS1-Black.ttf
+          weight: 900
+    - family: M PLUS 2
+      fonts:
+        - asset: assets/fonts/M_PLUS_2/static/MPLUS2-Thin.ttf
+          weight: 100
+        - asset: assets/fonts/M_PLUS_2/static/MPLUS2-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/M_PLUS_2/static/MPLUS2-Light.ttf
+          weight: 300
+        - asset: assets/fonts/M_PLUS_2/static/MPLUS2-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/M_PLUS_2/static/MPLUS2-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/M_PLUS_2/static/MPLUS2-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/M_PLUS_2/static/MPLUS2-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/M_PLUS_2/static/MPLUS2-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/M_PLUS_2/static/MPLUS2-Black.ttf
+          weight: 900
+    - family: Zen Kaku Gothic Antique
+      fonts:
+        - asset: assets/fonts/Zen_Kaku_Gothic_Antique/ZenKakuGothicAntique-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Zen_Kaku_Gothic_Antique/ZenKakuGothicAntique-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Zen_Kaku_Gothic_Antique/ZenKakuGothicAntique-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Zen_Kaku_Gothic_Antique/ZenKakuGothicAntique-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Zen_Kaku_Gothic_Antique/ZenKakuGothicAntique-Black.ttf
+          weight: 900
+
   uses-material-design: true

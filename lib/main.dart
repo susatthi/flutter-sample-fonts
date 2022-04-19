@@ -197,6 +197,17 @@ class _FontFamilySelectorDialog extends StatelessWidget {
     'Roboto',
     FontFamily.notoSansJapanese,
     FontFamily.mPLUSRounded1c,
+    FontFamily.notoSerifJapanese,
+    FontFamily.mPLUS1p,
+    FontFamily.shipporiMincho,
+    FontFamily.zenMaruGothic,
+    FontFamily.zenKakuGothicNew,
+    FontFamily.murecho,
+    FontFamily.shipporiMinchoB1,
+    FontFamily.mPLUS1Code,
+    FontFamily.mPlus1,
+    FontFamily.mPlus2,
+    FontFamily.zenKakuGothicAntique,
   ];
 
   @override
